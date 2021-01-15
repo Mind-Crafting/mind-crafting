@@ -7,4 +7,8 @@ describe('mind-crafting routes', () => {
   beforeEach(() => {
     return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'))
   });
+
+  it('should pass', async() => {
+    
+  });
 });
