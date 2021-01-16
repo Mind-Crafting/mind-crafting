@@ -10,4 +10,4 @@ User stories: ![](user-stories.png)
 
 SQL Relationships: ![](sql-relations.png)
 
-Software Requirements: 
+Software Requirements: https://github.com/Mind-Crafting/mind-crafting/blob/dev/requirements.md
