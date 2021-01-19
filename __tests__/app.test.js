@@ -13,10 +13,10 @@ describe('mind-crafting routes', () => {
       .post('/')
       .send({
         event:{
-          text: 'stuff echo this message'
+          text: 'echo this is a regularly scheduled echo for your convenience'
         }
       });
 
-    expect(response.body).toEqual({ response: 'this message' });
+    expect(response.body).toEqual({ response: 'this is a regularly scheduled echo for your convenience' });
   });
 });
