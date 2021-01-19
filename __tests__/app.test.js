@@ -4,18 +4,19 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('mind-crafting routes', () => {
-  beforeEach(() => {
-    return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'))
-  });
+  // beforeEach(() => {
+  //   return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'))
+  // });
 
   it('should echo a message', async() => {
-    const response = request(app)
+    const response = await request(app)
       .post('/')
       .send({
         event:{
-          text: 'echo this message'
+          text: 'stuff echo this message'
         }
       });
 
-    });
+    expect(response.body).toEqual({ response: 'this message' });
+  });
 });
