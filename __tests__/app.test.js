@@ -8,7 +8,14 @@ describe('mind-crafting routes', () => {
     return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'))
   });
 
-  it('should pass', async() => {
-    
-  });
+  it('should echo a message', async() => {
+    const response = request(app)
+      .post('/')
+      .send({
+        event:{
+          text: 'echo this message'
+        }
+      });
+
+    });
 });
