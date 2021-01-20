@@ -19,4 +19,17 @@ describe('mind-crafting routes', () => {
 
     expect(response.body).toEqual({ response: 'this is a regularly scheduled echo for your convenience' });
   });
+
+  it('should log a bot into the server', async() => {
+    const response = await request(app)
+      .post('/')
+      .send({
+        event:{
+          user: 'DoniBot',
+          text: 'play'
+        }
+      });
+
+    expect(response.body).toEqual({ response: 'DoniBot' });
+  });
 });
