@@ -4,9 +4,9 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('mind-crafting routes', () => {
-  // beforeEach(() => {
-  //   return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'))
-  // });
+  beforeEach(() => {
+    
+  });
 
   it('should echo a message', async() => {
     const response = await request(app)
@@ -18,18 +18,5 @@ describe('mind-crafting routes', () => {
       });
 
     expect(response.body).toEqual({ response: 'this is a regularly scheduled echo for your convenience' });
-  });
-
-  it('should log a bot into the server', async() => {
-    const response = await request(app)
-      .post('/')
-      .send({
-        event:{
-          user: 'DoniBot',
-          text: 'play'
-        }
-      });
-
-    expect(response.body).toEqual({ response: 'DoniBot' });
   });
 });
